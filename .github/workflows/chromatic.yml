@@ -6,8 +6,8 @@ jobs:
   chromatic:
     name: Run Chromatic
     runs-on: ubuntu-latest
-    script: echo ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
     steps:
+      - script: echo "TOKEN=${{ secrets.CHROMATIC_PROJECT_TOKEN }}"
       - name: Checkout code
         uses: actions/checkout@v4
         with:
